@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --pink-100: #ffd6eb;
+  --pink-200: #ffaacc;
+  --pink-300: #ff5faa;
+  --pink-400: #e8006f;
+  --pink-500: #b5005a;
+
+  --blue-100: #cce8ff;
+  --blue-200: #7ec8f7;
+  --blue-300: #2196f3;
+  --blue-400: #0d47a1;
+  --blue-500: #072e6b;
+
+  --white: #ffffff;
+  --soft: #fdf4f9;
+  --text: #1a1a2e;
+  --muted: #5a5a72;
+  --border: rgba(232, 0, 111, 0.15);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--soft);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--soft); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--pink-300), var(--blue-300));
+  border-radius: 10px;
+}
