@@ -7,8 +7,9 @@ const SKILLS = [
   { name: 'JavaScript', pct: 80 },
   { name: 'PHP',        pct: 85 },
   { name: 'Laravel',    pct: 80 },
-  { name: 'ReactJS',    pct: 75 },
-  { name: 'Flutter',    pct: 30 },
+  { name: 'ReactJS',    pct: 80 },
+  { name: 'Flutter',    pct: 80 },
+  { name: 'API',        pct: 70 },
 ]
 
 const EDUCATION = [
@@ -32,7 +33,7 @@ const EDUCATION = [
     level: 'SMK',
     school: 'SMK WIKRAMA BOGOR',
     year: 'Sedang Berjalan',
-    desc: 'Kelas 10, jurusan PPLG. Belajar coding, algoritma, dan desain.',
+    desc: 'Kelas 11, jurusan PPLG. Belajar coding, algoritma, dan desain.',
     img: 'smk.png',        
     icon: 'bx bx-laptop',
   },
@@ -80,6 +81,99 @@ const CERTIFICATES = [
     sub: 'MySkill Short Class Data Science · Agustus 2025',
     img: 'dataAnalist.png',
     icon: 'bx bx-bar-chart-alt-2',
+  },
+]
+
+const PROJECTS = [
+  {
+    title: 'Project TIXID',
+    desc: 'Web app untuk manajemen tiket event dengan fitur pemesanan, QR code, dan dashboard admin.',
+    img: 'p.tixid.png',
+    icon: 'bx bx-book',
+    tags: ['Laravel', 'PHP', 'MySQL'],
+    link: 'https://github.com/salsaamaliaa/TIX-ID',
+    linkLabel: 'GitHub',
+    linkIcon: 'bx bxl-github',
+  },
+  {
+    title: 'Desain UI Makanan',
+    desc: 'Desain UI Makanan dengan konsep modern dan warna cerah untuk aplikasi delivery makanan.',
+    img: 'p.figma.png',
+    icon: 'bx bx-library',
+    tags: ['Figma'],
+    link: 'https://www.figma.com/design/bl3LBrWyzigaQAXGTQdO8H/Untitled?node-id=0-1&m=dev&t=YuPYOT0glteGOpWH-1',
+    linkLabel: 'Figma',
+    linkIcon: 'bx bxl-figma',
+  },
+  {
+    title: 'Article Online',
+    desc: 'Sistem Article Online dengan fitur CRUD dan autentikasi pengguna.',
+    img: 'p.article_online.png',
+    icon: 'bx bx-money',
+    tags: ['Laravel', 'PHP', 'MySQL'],
+    link: 'https://github.com/salsaamaliaa/Proejct_Mandiri_Laravel',
+    linkLabel: 'GitHub',
+    linkIcon: 'bx bxl-github',
+  },
+  {
+    title: 'Platzi Store',
+    desc: 'E-commerce sederhana untuk belajar konsep keranjang belanja, checkout, dan manajemen produk.',
+    img: 'p.platzi.png',
+    icon: 'bx bx-store',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    link: 'https://github.com/salsaamaliaa/platzi-store.git',
+    linkLabel: 'GitHub',
+    linkIcon: 'bx bxl-github',
+  },
+  {
+    title: 'Profile Diri',
+    desc: 'Aplikasi profile diri dengan fitur edit profil, upload foto, dan tampilan responsif.',
+    img: 'p.profile.png',
+    icon: 'bx bx-user-check',
+    tags: ['Flutter', 'Dart'],
+    link: 'https://github.com/salsaamaliaa/Profile-Diri.git',
+    linkLabel: 'GitHub',
+    linkIcon: 'bx bxl-github',
+  },
+  {
+    title: 'UI/UX Aspirasi Siswa',
+    desc: '',
+    img: 'p.figmaA.png',
+    icon: 'bx bx-credit-card',
+    tags: ['Figma'],
+    link: 'https://www.figma.com/design/nEgfBjq4DGM6kJGv86P1QT/HearMeOut---Aspirasi-Siswa?node-id=122-115&t=0k6C1Paa71P4EOiy-1',
+    linkLabel: 'Figma',
+    linkIcon: 'bx bxl-figma',
+  },
+  {
+    title: 'Website Portfolio',
+    desc: 'Website portfolio pribadi yang menampilkan pendidikan, sertifikat, dan proyek dengan desain elegan.',
+    img: 'p.porto.png',
+    icon: 'bx bx-user',
+    tags: ['ReactJS', 'CSS'],
+    link: 'https://github.com/salsaamaliarizkya',
+    linkLabel: 'GitHub',
+    linkIcon: 'bx bxl-github',
+  },
+  {
+    title: 'Aplikasi Court Booking',
+    desc: 'Aplikasi mobile untuk pemesanan lapangan futsal dengan fitur jadwal, pembayaran, dan notifikasi.',
+    img: 'p.courtBooking.png',
+    icon: 'bx bx-notepad',
+    tags: ['Flutter', 'Dart'],
+    link: 'https://github.com/salsaamaliaa/court_booking_flutter.git',
+    linkLabel: 'GitHub',
+    linkIcon: 'bx bxl-github',
+  },
+  {
+    title: 'Book Store',
+    desc: 'Aplikasi web untuk toko buku dengan fitur katalog, keranjang belanja, dan sistem pembayaran.',
+    img: 'p.reactbook.png',
+    icon: 'bx bx-server',
+    tags: ['React', 'API'],
+    link: 'https://github.com/salsaamaliaa/book-store.git',
+    linkLabel: 'GitHub',
+    linkIcon: 'bx bxl-github',
   },
 ]
 
@@ -134,7 +228,7 @@ function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <a href="#HOME" className="nav-logo">SAR.</a>
       <ul className={`nav-links${open ? ' open' : ''}`}>
-        {['HOME','ABOUT','EDUCATION','PORTFOLIO','CONTACT'].map(l => (
+        {['HOME','ABOUT','EDUCATION','PORTFOLIO','PROJECTS','CONTACT'].map(l => (
           <li key={l}>
             <a href={`#${l}`} onClick={() => setOpen(false)}>
               {l.charAt(0) + l.slice(1).toLowerCase()}
@@ -187,6 +281,9 @@ function Hero() {
             <a href="#CONTACT" className="btn-outline">
               <i className="bx bx-send" /> Hubungi Saya
             </a>
+             <a href="/cv-salsa.pdf" download target="_blank" className="btn-outline">
+               <i className="bx bx-download" /> Download CV
+            </a>
           </div>
         </div>
         <div className="hero-photo-wrap">
@@ -223,7 +320,7 @@ function About() {
         <div>
           <div className="about-bio reveal">
             <p>
-              Halo! Saya <strong>Salsa Amalia Rizkya</strong>, siswi kelas 10 SMK Wikrama Bogor
+              Halo! Saya <strong>Salsa Amalia Rizkya</strong>, siswi kelas 11 SMK Wikrama Bogor
               jurusan PPLG (Pengembangan Perangkat Lunak dan Gim). Saya tinggal di Cigombong
               dan memiliki passion besar di dunia <strong>web development</strong>.
             </p>
@@ -369,6 +466,74 @@ function Portfolio() {
     </section>
   )
 }
+
+function Project() {
+  return (
+    <section id="PROJECTS" className="section">
+      <div className="section-header reveal">
+        <span className="section-eyebrow">Karya Saya</span>
+        <h2 className="section-title">Proyek <span className="gradient-text">Pilihan</span></h2>
+        <div className="section-line" />
+      </div>
+
+      {/* Tombol GitHub Profile */}
+      <div className="proj-github-bar reveal">
+        <a
+          href="https://github.com/salsaamaliaa"
+          target="_blank"
+          rel="noreferrer"
+          className="proj-github-btn"
+        >
+          <i className="bx bxl-github" />
+          github.com/salsaamaliaa
+        </a>
+      </div>
+
+      <div className="proj-grid">
+        {PROJECTS.map((p, i) => (
+          <div className={`proj-card reveal reveal-delay-${(i % 3) + 1}`} key={p.title}>
+            {/* Gambar / Placeholder */}
+            <div className="proj-img-wrap">
+              <ImgWithFallback
+                src={p.img ? `/${p.img}` : ''}
+                alt={p.title}
+                className="proj-img"
+                fallbackIcon={p.icon}
+                placeholderClass="proj-img-placeholder"
+              />
+            </div>
+
+            {/* Konten */}
+            <div className="proj-body">
+              <h3 className="proj-title">{p.title}</h3>
+              <p className="proj-desc">{p.desc}</p>
+
+              {/* Tag Teknologi */}
+              <div className="proj-tags">
+                {p.tags.map(tag => (
+                  <span className="proj-tag" key={tag}>{tag}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Tombol Link */}
+            <a
+              href={p.link}
+              target="_blank"
+              rel="noreferrer"
+              className={`proj-link-btn ${p.linkLabel === 'Figma' ? 'proj-link-figma' : 'proj-link-github'}`}
+            >
+              <i className={p.linkIcon} />
+              {p.linkLabel}
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+
 function Contact() {
   return (
     <section id="CONTACT" className="contact-section">
@@ -378,8 +543,8 @@ function Contact() {
         <div className="section-line" />
       </div>
       <div className="reveal" style={{ marginTop: '1rem' }}>
-        <a href="mailto:salsaamaliarizkya@smkwikrama.sch.id" className="contact-email">
-          salsaamaliarizkya@smkwikrama.sch.id
+        <a href="mailto:shalsajourneyy@gmail.com" className="contact-email">
+          shalsajourneyy@gmail.com
         </a>
       </div>
       <div className="socials reveal">
@@ -396,6 +561,7 @@ function Contact() {
     </section>
   )
 }
+
 export default function App() {
   useScrollReveal()
   useSkillsAnimate()
@@ -406,6 +572,7 @@ export default function App() {
       <About />
       <Education />
       <Portfolio />
+      <Project />
       <Contact />
       <footer className="footer">
         <span>© 2025 Salsa Amalia Rizkya. All rights reserved.</span>
