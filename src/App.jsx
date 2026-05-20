@@ -151,7 +151,7 @@ const PROJECTS = [
     img: 'p.porto.png',
     icon: 'bx bx-user',
     tags: ['ReactJS', 'CSS'],
-    link: 'https://github.com/salsaamaliarizkya',
+    link: 'https://github.com/salsaamaliaa/portofolio-salsaamalia.git',
     linkLabel: 'GitHub',
     linkIcon: 'bx bxl-github',
   },
